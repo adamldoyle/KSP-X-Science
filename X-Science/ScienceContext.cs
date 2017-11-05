@@ -382,11 +382,13 @@ _logger.Trace( "UpdateKscBiomes Done - " + Elapsed.ToString( ) + "ms" );*/
 				}
 
 
-
-				// Check this experiment in all biomes on all bodies
-				for( int body_index = 0; body_index < bodies.Count; body_index++ )
+                var _vessel = FlightGlobals.ActiveVessel;
+                var _planet = FlightGlobals.currentMainBody;
+                // Check this experiment in all biomes on all bodies
+                for ( int body_index = 0; body_index < bodies.Count; body_index++ )
 				{
-					if( experiment.requireAtmosphere && !bodies[ body_index ].HasAtmosphere )
+                    if (_vessel != null && _planet != null) if (bodies[body_index].CelestialBody != FlightGlobals.currentMainBody) continue; // Only load current celestial body
+                    if ( experiment.requireAtmosphere && !bodies[ body_index ].HasAtmosphere )
 						continue; // If the whole planet doesn't have an atmosphere, then there's not much point continuing.
 					for( int situation_index = 0; situation_index < SituationList.Count; situation_index++ )
 					{

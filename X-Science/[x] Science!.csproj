@@ -35,15 +35,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\Games\KSP\KSP_Real\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>R:\KSP_1.3.1_dev\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\Games\KSP\KSP_Real\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>R:\KSP_1.3.1_dev\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\Games\KSP\KSP_Real\KSP_x64_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>R:\KSP_1.3.1_dev\KSP_x64_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -164,14 +164,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>SET PATHOUT=C:\Games\KSP\KSP_Test\GameData\[x] Science!
-IF NOT EXIST %25PATHOUT%25 (
-MKDIR "%25PATHOUT%25"
-) 
-
-copy "$(TargetPath)" "%25PATHOUT%25"
-robocopy "$(ProjectDir)GameData\[x] Science!" "%25PATHOUT%25" /E
-exit 0</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
